@@ -1,0 +1,4 @@
+
+criar novo user no laboratorio do IFPR: https://notasecodigos.wordpress.com/2017/06/16/criar-nova-conta-de-usuario-no-mysql-com-o-mysql-workbench/#:~:text=Criar%20nova%20conta%20de%20usu%C3%A1rio%20no%20MYSQL%20com%20o%20MYSQL%20Workbench,-Procedimentos&text=2%20%E2%80%93%20Na%20sec%C3%A7%C3%A3o%20MYSQL%20Conecctions,cria%20uma%20conex%C3%A3o%20e%20entrar.
+
+CREATE DATABASE amigosdospets CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
