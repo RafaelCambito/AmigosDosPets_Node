@@ -1,0 +1,16 @@
+<!-- views/dashboard.ejs -->
+
+<h1>Dashboard</h1>
+
+<h2>Detalhes da Conta</h2>
+<p>Nome: <%= user.nome_user %></p>
+<p>E-mail: <%= user.email_user %></p>
+<!-- Adicione outras informações de contato conforme necessário -->
+
+<h2>Seus Animais de Estimação</h2>
+<ul>
+    <% pets.forEach(pet => { %>
+        <li><%= pet.nome_pet %></li>
+        <!-- Adicione outras informações do animal de estimação conforme necessário -->
+    <% }); %>
+</ul>

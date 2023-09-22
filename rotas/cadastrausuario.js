@@ -31,16 +31,16 @@ router.post('/cadastrausuario', (req, res) => {
   // Aqui você deve escrever o código para inserir os dados no banco de dados MySQL usando o modelo User
 
   User.create({
-      nome,
-      cpf,
-      email,
-      whatsapp,
-      telefone_secundario,
-      endereco,
-      estado,
-      cidade,
-      senha,
-      genero
+    nome,
+    cpf,
+    email,
+    whatsapp,
+    telefone_secundario,
+    endereco,
+    estado,
+    cidade,
+    senha,
+    genero
   }).then(user => {
       console.log('Usuário cadastrado com sucesso:', user.toJSON());
       res.send('Cadastro realizado com sucesso!'); // Envia uma mensagem de sucesso
