@@ -50,6 +50,11 @@ app.use((req, res, next) => {
 const rotas = require('./rotas/testecadbd'); // Importar o arquivo de rotas
 app.use('/', rotas); // Usar as rotas
 
+app.get('/', (req, res) => {
+    const filePath = path.join(__dirname, 'public', 'html', 'home.html'); // Substitua pelo caminho correto para sua página
+    res.sendFile(filePath);
+});
+
 // importa rota login
 const rotasLogin = require('./rotas/login'); // Importar o arquivo de rotas
 app.use('/', rotasLogin); // Usar as rotas
