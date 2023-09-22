@@ -1,28 +1,24 @@
 COMO RODAR O PROJETO
-### npm install
-### npm init
+### clonar repositório: https://github.com/RafaelCambito/AmigosDosPets_Node.git
 
-Gerenciar as requisiçõe, rotas, etc
+Instalar via terminal:
 ### npm install express
+### npm install -g nodemon
+### npm install --save-dev nodemon
+### npm install --save sequelize
+### npm install --save mysql2
+### npm install ejs --save
+### npm install ejs
+### npm install express-mysql-session
+### npm install express-session --save
 
-Rodar o projeto
-### node app.js
+Rodar o projeto com nodemon
+### nodemon app.js  
 
 Acessar no navegador
 ### http:/localhost:8080
 
-Módulo para reiniciar o servidor e recompilar sempre que em modificação:
-### npm install -g nodemon
-### npm install --save-dev nodemon
-
-Rodar o projeto com nodemon (reiniciar a máquina para tentar rodar - minuto 8:49 do vídeo)
-### nodemon app.js  
-
-Bliblioteca para facilitar gerenciametno BD SQL
-### npm install --save sequelize
-
-drive para banco de dados
-### npm install --save mysql2
-
+Rota cadastro usuário
 Acessar home do site
-### http://localhost:8080/home.html
+### http://localhost:8080/cadastrausuario
+
