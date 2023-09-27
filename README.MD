@@ -12,7 +12,7 @@ npm install ejs
 npm install express-mysql-session  
 npm install express-session --save  
 
-###Rodar o projeto com nodemon
+###Rodar o projeto com nodemon  
 nodemon app.js  
 
 ### Acessar no navegador  
