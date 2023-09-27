@@ -18,6 +18,14 @@ nodemon app.js
 ### Acessar no navegador  
 http:/localhost:8080  
 
-### Rota cadastro usuário  
-http://localhost:8080/cadastrausuario  
+### Rotas  
+Home = http://localhost:8080/  
+Cadastro usuário = http://localhost:8080/cadastrausuario  
+Cadastro pet = http://localhost:8080/cadastropet  
+Login = http://localhost:8080/login  
+Dashboard usuário = http://localhost:8080/dashboard  
+Consulta pets adoção = http://localhost:8080/adotar  
+
+### Em desenvolvimento / Projeto não finalizado.
+
 
