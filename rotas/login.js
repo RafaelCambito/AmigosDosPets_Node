@@ -18,7 +18,8 @@ router.post('/login', (req, res) => {
             res.status(401).render('login', { error: 'Credenciais incorretas' });
         } else {
             // Login bem-sucedido, inicie a sessão
-            req.session.userId = user.id;
+            req.session.user_id = user.id;
+            console.log('Sessão do usuário criada com sucesso:', req.session.user_id);
 
             // Redirecione para a página do painel após o login
             res.redirect('/dashboard');
@@ -30,3 +31,5 @@ router.post('/login', (req, res) => {
 });
 
 module.exports = router;
+
+

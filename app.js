@@ -7,6 +7,10 @@ const path = require('path'); // Importe o módulo 'path'
 const app = express();
 const port = 8080;
 
+// Importando modelos
+const Pet = require('./models/pet'); // Certifique-se de que o caminho está correto
+
+
 // Configurar express-session com o armazenamento personalizado
 app.use(
     session({
@@ -37,14 +41,61 @@ app.use((req, res, next) => {
     next();
 });
 
+
+// importa rota login
+const rotasLogin = require('./rotas/login'); // Importar o arquivo de rotas
+app.use('/', rotasLogin); // Usar as rotas
+
 // Middleware para verificar se o usuário está autenticado
 app.use((req, res, next) => {
-    if (!req.session.userId && req.url !== '/login') { // Verifica se a rota não é /login
+    if (
+        req.url !== '/' && // Permita o acesso à página de login sem autenticação
+        req.url !== '/cadastrausuario' && // Permita o acesso à página de cadastro de pets sem autenticação
+        req.url !== '/adotar' && // Permita o acesso à página de cadastro de pets sem autenticação
+        !req.session.user_id
+    ) {
         res.redirect('/login');
     } else {
         next();
     }
 });
+
+
+// Importe a rota do dashboard
+const dashboardRoute = require('./rotas/dashboard');
+app.use('/', dashboardRoute);
+
+// Rota para servir a imagem do animal
+app.get('/pets/:id_pet/photo', (req, res) => {
+    const petId = req.params.id_pet;
+    Pet.findByPk(petId).then((pet) => {
+        if (!pet || !pet.foto_pet) {
+            // Se o animal ou a imagem não existir, envie uma imagem padrão ou outra resposta apropriada
+            return res.status(404).send('Imagem não encontrada');
+        }
+        // Configurar o cabeçalho da resposta para indicar que é uma imagem
+        res.setHeader('Content-Type', 'image/jpeg'); // Certifique-se de definir o tipo de conteúdo correto
+
+        // Enviar a imagem do animal
+        res.send(pet.foto_pet);
+    }).catch((error) => {
+        console.error('Erro ao buscar a imagem do animal:', error);
+        res.status(500).send('Erro ao buscar a imagem do animal');
+    });
+});
+
+// Rota de logout
+app.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            console.error('Erro ao encerrar a sessão:', err);
+            res.status(500).send('Erro ao encerrar a sessão.');
+        } else {
+            res.redirect('/'); // Redirecione para a página de login após o logout
+        }
+    });
+});
+  
 
 // Configurar rotas
 const rotas = require('./rotas/testecadbd'); // Importar o arquivo de rotas
@@ -55,10 +106,6 @@ app.get('/', (req, res) => {
     res.sendFile(filePath);
 });
 
-// importa rota login
-const rotasLogin = require('./rotas/login'); // Importar o arquivo de rotas
-app.use('/', rotasLogin); // Usar as rotas
-
 // importa rota cadastra usuario
 const rotasCadastraUsuario = require('./rotas/cadastrausuario'); // Importar o arquivo de rotas
 app.use('/', rotasCadastraUsuario); // Usar as rotas
@@ -67,9 +114,9 @@ app.use('/', rotasCadastraUsuario); // Usar as rotas
 const rotasCadastroPet = require('./rotas/cadastropet'); // Importar o arquivo de rotas
 app.use('/', rotasCadastroPet); // Usar as rotas
 
-// Importe a rota do dashboard
-const dashboardRoute = require('./rotas/dashboard');
-app.use('/', dashboardRoute);
+// Importar e usar as rotas da página de adoção
+const animalRoutes = require('./rotas/adotar'); // Certifique-se de que o caminho esteja correto
+app.use('/', animalRoutes); // Rotas da página de adoção
 
 // Iniciar o servidor
 app.listen(port, () => {

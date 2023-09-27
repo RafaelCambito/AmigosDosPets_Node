@@ -32,12 +32,24 @@ CREATE TABLE `pets` (
   `sobre_pet` text COLLATE utf8mb4_unicode_ci,
   `data_criacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `data_atualizacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `disponivel_doacao` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `perdido` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id_pet`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `pets_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `pets` */
+
+insert  into `pets`(`id_pet`,`nome_pet`,`user_id`,`especie_pet`,`sexo_pet`,`idade_pet`,`porte_pet`,`foto_pet`,`sobre_pet`,`data_criacao`,`data_atualizacao`,`disponivel_doacao`,`perdido`) values 
+(2,'Bob',8,'cachorro','macho','filhote','pequeno','dog.jpg','teste','2023-09-24 00:17:53','2023-09-26 23:40:17','S','N'),
+(3,'Cat',8,'gato','femea','filhote','pequeno','cat.jpg','Teste cadastro cat','2023-09-24 23:39:11','2023-09-26 23:40:18','S','N'),
+(4,'gatinho',8,'gato','macho','filhote','pequeno','cat2.avif','Teste cadastro cat2','2023-09-24 23:49:04','2023-09-26 23:40:18','S','N'),
+(17,'Marley',8,'cachorro','macho','filhote','pequeno','Marley.jpg','Marley','2023-09-26 00:11:05','2023-09-26 23:40:18','S','N'),
+(18,'Stalone',8,'cachorro','macho','adulto','grande','Stalone.png','Stalone','2023-09-26 00:11:48','2023-09-26 23:40:19','S','N'),
+(19,'Caramelo',8,'cachorro','macho','adulto','medio','caramelo.jpg','Caramelo','2023-09-26 00:13:32','2023-09-26 23:40:19','S','N'),
+(21,'Salsicha',8,'cachorro','macho','adulto','pequeno','salsicha.jpg','Salsicha','2023-09-26 23:41:09','2023-09-26 23:41:09','S','N'),
+(22,'Spike',8,'cachorro','macho','filhote','pequeno','Spike.jpg','Spike','2023-09-26 23:42:41','2023-09-26 23:42:41','N','S');
 
 /*Table structure for table `sessions` */
 
@@ -53,7 +65,8 @@ CREATE TABLE `sessions` (
 /*Data for the table `sessions` */
 
 insert  into `sessions`(`session_id`,`expires`,`data`) values 
-('Ywf2mM9t6o1TNYjD7cAsaG9SvnLOQbQp',1695437860,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"userId\":8}');
+('7Aq7_z42j6GFOtpXGSdRPntTYaj71l2H',1695784680,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8}'),
+('h9YG2CD4ZR39iw-UtCK7H4X1YpAOLkUf',1695871172,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8}');
 
 /*Table structure for table `users` */
 

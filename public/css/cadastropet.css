@@ -1,61 +1,72 @@
-/* Estilo para o corpo da página */
+/* Estilos para o formulário de cadastro de pet */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
 }
 
-/* Estilo para o formulário */
-#petForm {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 400px;
-}
-
-/* Estilo para o cabeçalho do formulário */
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 16px;
+    color: black;
 }
 
-/* Estilo para rótulos e campos de entrada */
-label {
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
     display: block;
+    margin-top: 5px;
     font-weight: bold;
-    margin-bottom: 5px;
+    color:black;
 }
 
-input[type="text"],
-select,
-textarea {
+form input[type="text"],
+form select,
+form textarea,
+form input[type="file"],
+form input[type="checkbox"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 8px;
+    margin-top: 3px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
-/* Estilo para o botão de enviar */
+form select {
+    height: 34px;
+}
+
+form textarea {
+    height: 90px;
+}
+
+form input[type="checkbox"] {
+    width: auto;
+    margin-top: 10px;
+}
+
 button[type="submit"] {
+    display: inline-block;
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 3px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    margin-top: 15px;
 }
 
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
+

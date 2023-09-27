@@ -107,8 +107,36 @@ button {
     border: 1px solid rgb(23, 27, 223);
 }
 
+.container-btn2 {
+    width: 30%;
+    position: absolute;
+    top: 18rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.container-btn2 a > button {
+    width: 10rem;
+    height: 2.5rem;
+}
+
+.pet-perdido {
+    background-color:  rgb(143, 226, 143);
+    color: rgb(23, 27, 223);
+    cursor: pointer;
+}
+
+.pet-encontrado {
+    background-color: rgb(23, 27, 223);
+    color:  rgb(249, 253, 249);
+    border: 1px solid rgb(23, 27, 223);
+}
+
 .quero-adotar:hover,
 .quero-divulgar:hover,
+.pet-perdido:hover,
+.pet-encontrado:hover,
 .btn-entrar:hover ,
 .btn-cadastrar:hover {
     opacity: .5;
@@ -117,8 +145,9 @@ button {
 .container-text {
     position: center;
     top: 55rem;
-    margin: 0 44rem;
+    margin: 20 44rem;
     text-align: center;
+
 }
 
 .container-text h1 {

@@ -42,7 +42,15 @@ const Pet = db.define('Pet', {
     },
     data_atualizacao: {
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+    },
+    disponivel_doacao: {
+        type: Sequelize.STRING, // Tipo booleano para indicar se o pet está disponível para doação
+        defaultValue: 'N', // Padrão para "não disponível para doação"
+    },
+    perdido: {
+        type: Sequelize.STRING, // Tipo booleano para indicar se o pet está perdido
+        defaultValue: 'N', // Padrão para "não perdido"
     }
 }, {
     timestamps: false, // Isso desativa a criação automática de colunas de data de criação e atualização

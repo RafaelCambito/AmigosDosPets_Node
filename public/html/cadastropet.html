@@ -8,12 +8,13 @@
 </head>
 <body>
     <h1>Cadastro de Pet</h1>
-    <form id="petForm" method="post" action="/cadastrarpet">
+    <form id="petForm" method="post" action="/cadastropet">
         <label for="nome_pet">Nome do Pet:</label>
         <input type="text" id="nome_pet" name="nome_pet" required><br>
 
+        <!-- comenado aqui com teste para pegar o ID do usuário logado
         <label for="user_id">ID do Tutor (usuário):</label>
-        <input type="text" id="user_id" name="user_id" value="informar ID do user" required><br>
+        <input type="text" id="user_id" name="user_id" value="informar ID do user" required><br>-->
 
         <label for="especie_pet">Espécie do Pet</label>
         <select id="especie_pet" name="especie_pet">
@@ -47,7 +48,44 @@
         <label for="sobre_pet">Sobre o Pet:</label>
         <textarea id="sobre_pet" name="sobre_pet" required></textarea><br>
 
+        <label for="disponivel_doacao">Disponível para Doação?</label>
+        <input type="checkbox" id="disponivel_doacao" name="disponivel_doacao" value="S">
+    
+        <label for="perdido">Pet Perdido?</label>
+        <input type="checkbox" id="perdido" name="perdido" value="S">
+
+
+        <p></p>
         <button type="submit">Cadastrar</button>
     </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const disponivelDoacaoCheckbox = document.getElementById("disponivel_doacao");
+            const perdidoCheckbox = document.getElementById("perdido");
+        
+            disponivelDoacaoCheckbox.addEventListener("change", function () {
+                if (this.checked) {
+                    // Se Disponível para Adoção foi marcado, desabilite Pet Perdido
+                    perdidoCheckbox.disabled = true;
+                } else {
+                    // Se Disponível para Adoção foi desmarcado, habilite Pet Perdido
+                    perdidoCheckbox.disabled = false;
+                }
+            });
+        
+            perdidoCheckbox.addEventListener("change", function () {
+                if (this.checked) {
+                    // Se Pet Perdido foi marcado, desabilite Disponível para Adoção
+                    disponivelDoacaoCheckbox.disabled = true;
+                } else {
+                    // Se Pet Perdido foi desmarcado, habilite Disponível para Adoção
+                    disponivelDoacaoCheckbox.disabled = false;
+                }
+            });
+        });
+        </script>
+        
+
 </body>
 </html>
