@@ -30,7 +30,7 @@ const Pet = db.define('Pet', {
         type: Sequelize.STRING(50)
     },
     foto_pet: {
-        type: Sequelize.BLOB,
+        type: Sequelize.STRING, // Caminho relativo da imagem
         allowNull: false
     },
     sobre_pet: {

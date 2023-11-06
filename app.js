@@ -122,6 +122,10 @@ app.use('/', animalRoutes); // Rotas da página de adoção
 const rotasPetPerdido = require('./rotas/petperdido'); // Importar o arquivo de rotas
 app.use('/', rotasPetPerdido); // Usar as rotas
 
+// importa rota petencontrado
+const rotasPetencontrado = require('./rotas/petencontrado'); // Importar o arquivo de rotas
+app.use('/', rotasPetencontrado); // Usar as rotas
+
 // Iniciar o servidor
 app.listen(port, () => {
     console.log(`Servidor em execução na porta ${port}`);

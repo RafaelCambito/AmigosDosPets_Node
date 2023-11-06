@@ -12,27 +12,9 @@ MySQL - 5.7.36 : Database - amigosdospets
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-/*Table structure for table `petencontrado` */
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`amigosdospets` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
 
-DROP TABLE IF EXISTS `petencontrado`;
-
-CREATE TABLE `petencontrado` (
-  `id_pet` int(11) NOT NULL AUTO_INCREMENT,
-  `especie_encontrado` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `data_encontrado` date NOT NULL,
-  `cidade_encontrado` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `local_encontrado` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `detalhes_encontrado` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `foto_encontrado` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `situacao_encontrado` varchar(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id_pet`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-/*Data for the table `petencontrado` */
-
-insert  into `petencontrado`(`id_pet`,`especie_encontrado`,`user_id`,`data_encontrado`,`cidade_encontrado`,`local_encontrado`,`detalhes_encontrado`,`foto_encontrado`,`situacao_encontrado`) values 
-(1,'Cão',8,'2023-11-05','Cascavel','Bairro Floresta','Teste ','image/1699236544852.jpg','S');
+USE `amigosdospets`;
 
 /*Table structure for table `pets` */
 
@@ -46,7 +28,7 @@ CREATE TABLE `pets` (
   `sexo_pet` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `idade_pet` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `porte_pet` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `foto_pet` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `foto_pet` blob NOT NULL,
   `sobre_pet` text COLLATE utf8mb4_unicode_ci,
   `data_criacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `data_atualizacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -55,21 +37,19 @@ CREATE TABLE `pets` (
   PRIMARY KEY (`id_pet`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `pets_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `pets` */
 
 insert  into `pets`(`id_pet`,`nome_pet`,`user_id`,`especie_pet`,`sexo_pet`,`idade_pet`,`porte_pet`,`foto_pet`,`sobre_pet`,`data_criacao`,`data_atualizacao`,`disponivel_doacao`,`perdido`) values 
-(2,'Bob',8,'cachorro','macho','filhote','pequeno','image/cachorro.jpg','teste','2023-09-24 00:17:53','2023-11-05 19:37:28','S','N'),
-(3,'Cat',8,'gato','femea','filhote','pequeno','image/gato2.jpg','Teste cadastro cat','2023-09-24 23:39:11','2023-11-05 19:37:38','S','N'),
-(4,'gatinho',8,'gato','macho','filhote','pequeno','image/gato.jpg','Teste cadastro cat2','2023-09-24 23:49:04','2023-11-05 19:37:42','S','N'),
-(17,'Marley',8,'cachorro','macho','filhote','pequeno','image/cachorro2.jpg','Marley','2023-09-26 00:11:05','2023-11-05 19:37:46','S','N'),
-(18,'Stalone',8,'cachorro','macho','adulto','grande','image/1698722920957.jpg','Stalone','2023-09-26 00:11:48','2023-11-05 19:34:49','S','N'),
-(19,'Caramelo',8,'cachorro','macho','adulto','medio','image/1698722920957.jpg','Caramelo','2023-09-26 00:13:32','2023-11-05 19:34:49','S','N'),
-(21,'Salsicha',8,'cachorro','macho','adulto','pequeno','image/1698722920957.jpg','Salsicha','2023-09-26 23:41:09','2023-11-05 19:34:50','S','N'),
-(22,'Spike',8,'cachorro','macho','filhote','pequeno','image/1698722920957.jpg','Spike','2023-09-26 23:42:41','2023-11-05 19:34:50','N','S'),
-(23,'Teste pet perdido',8,'gato','femea','adulto','pequeno','image/1698722920957.jpg','Perdido na rua ABC, bairro XYZ, por volta das 19:00 horas do dia 27-09-2023.','2023-09-27 18:03:12','2023-11-05 19:34:51','N','S'),
-(24,'gato',8,'gato','femea','idoso','pequeno','image/1698722920957.jpg','dfsdfs','2023-10-31 00:28:40','2023-10-31 00:28:40','S','N');
+(2,'Bob',8,'cachorro','macho','filhote','pequeno','dog.jpg','teste','2023-09-24 00:17:53','2023-09-26 23:40:17','S','N'),
+(3,'Cat',8,'gato','femea','filhote','pequeno','cat.jpg','Teste cadastro cat','2023-09-24 23:39:11','2023-09-26 23:40:18','S','N'),
+(4,'gatinho',8,'gato','macho','filhote','pequeno','cat2.avif','Teste cadastro cat2','2023-09-24 23:49:04','2023-09-26 23:40:18','S','N'),
+(17,'Marley',8,'cachorro','macho','filhote','pequeno','Marley.jpg','Marley','2023-09-26 00:11:05','2023-09-26 23:40:18','S','N'),
+(18,'Stalone',8,'cachorro','macho','adulto','grande','Stalone.png','Stalone','2023-09-26 00:11:48','2023-09-26 23:40:19','S','N'),
+(19,'Caramelo',8,'cachorro','macho','adulto','medio','caramelo.jpg','Caramelo','2023-09-26 00:13:32','2023-09-26 23:40:19','S','N'),
+(21,'Salsicha',8,'cachorro','macho','adulto','pequeno','salsicha.jpg','Salsicha','2023-09-26 23:41:09','2023-09-26 23:41:09','S','N'),
+(22,'Spike',8,'cachorro','macho','filhote','pequeno','Spike.jpg','Spike','2023-09-26 23:42:41','2023-09-26 23:42:41','N','S');
 
 /*Table structure for table `sessions` */
 
@@ -85,9 +65,8 @@ CREATE TABLE `sessions` (
 /*Data for the table `sessions` */
 
 insert  into `sessions`(`session_id`,`expires`,`data`) values 
-('-gBjV7xus2X728KeUTaLINr3Q59IZrI_',1699309287,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"}}'),
-('PWrW26sWFLV28Rt3GneIQGl2uI9afCCb',1699309287,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"}}'),
-('W-FF45QJzIa1yl-evf5xck91TgO1u5Yb',1699323270,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8,\"successMessage\":\"Cadastro do pet encontrado realizado com sucesso!\"}');
+('7Aq7_z42j6GFOtpXGSdRPntTYaj71l2H',1695784680,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8}'),
+('h9YG2CD4ZR39iw-UtCK7H4X1YpAOLkUf',1695871172,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8}');
 
 /*Table structure for table `users` */
 

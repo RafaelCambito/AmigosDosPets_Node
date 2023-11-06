@@ -1,0 +1,43 @@
+version: '3'
+services:
+  nodejs:
+    image: node:18
+    container_name: node
+    working_dir: /usr/src/app
+    volumes:
+      - ./app:/usr/src/app
+    ports:
+      - "8080:8080"
+    environment:
+      NODE_ENV: development
+      DB_HOST: mysql
+      DB_USER: php
+      DB_PASSWORD: 12345678
+      DB_PORT: 3306
+    command: npm start
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: php
+      MYSQL_PASSWORD: 12345678
+      MYSQL_DATABASE: amigosdospets      
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+  mysql-workbench:
+    image: mysql/mysql-workbench
+    container_name: workbench
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_USER: php
+      - MYSQL_PASSWORD: 12345678
+      - MYSQL_DATABASE: amigosdospets  
+    ports:
+      - "3308:3306"

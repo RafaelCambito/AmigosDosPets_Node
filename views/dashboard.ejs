@@ -26,9 +26,9 @@
     <main class="dashboard-content">
         <section class="account-details">
             <h2>Detalhes da Conta</h2>
-            <p>Nome: <%= user.nome_user %></p>
-            <p>E-mail: <%= user.email_user %></p>
-            <!-- Adicione outras informações de contato conforme necessário -->
+            <p>Nome: <%= user.nome %></p>
+            <p>E-mail: <%= user.email %></p>
+            <!-- Adicionar outras informações de contato conforme necessário -->
         </section>
 
         <section class="pet-list">
@@ -37,10 +37,10 @@
                 <% pets.forEach(pet => { %>
                     <li>
                         <div class="pet-card">
-                            <img src="/pets/<%= pet.id_pet %>/photo" alt="Imagem do Animal">
+                            <img src="/<%= pet.foto_pet %>" alt="Imagem do Animal">
                             <h3><%= pet.nome_pet %></h3>
                             <p>Espécie: <%= pet.especie_pet %></p>
-                            <!-- Adicione outras informações do animal de estimação conforme necessário -->
+                            <!-- Adicionar outras informações do animal de estimação conforme necessário -->
                         </div>
                     </li>
                 <% }); %>
