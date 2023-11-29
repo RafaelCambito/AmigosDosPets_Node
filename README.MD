@@ -11,6 +11,7 @@ npm install ejs --save
 npm install ejs  
 npm install express-mysql-session  
 npm install express-session --save  
+### npm install qrcode
 
 ###Rodar o projeto com nodemon   
 nodemon app.js  
