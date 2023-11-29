@@ -12,6 +12,10 @@ MySQL - 5.7.36 : Database - amigosdospets
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`amigosdospets` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
+
+USE `amigosdospets`;
+
 /*Table structure for table `petencontrado` */
 
 DROP TABLE IF EXISTS `petencontrado`;
@@ -85,8 +89,9 @@ CREATE TABLE `sessions` (
 /*Data for the table `sessions` */
 
 insert  into `sessions`(`session_id`,`expires`,`data`) values 
-('7TBfrXadUYh1TSx8C_CyFDFvK6e6Ew89',1701377857,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8}'),
-('UXrQePFNFwOiv4a6vXxBlXqY5Pn61DJU',1701316862,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8}');
+('-gBjV7xus2X728KeUTaLINr3Q59IZrI_',1699309287,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"}}'),
+('PWrW26sWFLV28Rt3GneIQGl2uI9afCCb',1699309287,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"}}'),
+('W-FF45QJzIa1yl-evf5xck91TgO1u5Yb',1699323270,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8,\"successMessage\":\"Cadastro do pet encontrado realizado com sucesso!\"}');
 
 /*Table structure for table `users` */
 

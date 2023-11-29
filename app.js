@@ -126,6 +126,10 @@ app.use('/', rotasPetPerdido); // Usar as rotas
 const rotasPetencontrado = require('./rotas/petencontrado'); // Importar o arquivo de rotas
 app.use('/', rotasPetencontrado); // Usar as rotas
 
+// importa rota qrcode
+const qrcodeRouter = require('./rotas/qrcode');
+app.use('/qrcode', qrcodeRouter);
+
 // Iniciar o servidor
 app.listen(port, () => {
     console.log(`Servidor em execução na porta ${port}`);

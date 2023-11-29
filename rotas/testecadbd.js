@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const User = require('../models/user'); // Importe o modelo User que representa a tabela de usuários
+const User = require('../models/User'); // Importe o modelo User que representa a tabela de usuários
 
 
 //############ GET E POST PARA CADASTRO TESTE #############

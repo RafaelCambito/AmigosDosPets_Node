@@ -1,33 +1,39 @@
 const { DataTypes } = require('sequelize');
 const db = require('../models/db');
+const User = require('./User');
 
 const Animal = db.define('Animal', {
-    nome: {
+    id_pet: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    especie_pet: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    especie: {
+    sexo_pet: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    sexo: {
+    porte_pet: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    porte: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },    
     disponivel_doacao: {
         type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: 'S', // Defina o valor padrão para 'S' (disponível para adoção)
+        defaultValue: 'S',
     },
-    perdido: {
-        type: DataTypes.STRING, // Defina o tipo de dados como STRING
-        allowNull: false,
-        defaultValue: 'N', // Defina o valor padrão para 'N' (não perdido)
-    },
+}, {
+    tableName: 'pets',
+    timestamps: false,
+    attributes: {
+        exclude: ['id_pet']
+    }
+
 });
+
+Animal.belongsTo(User, { foreignKey: 'user_id' })
 
 module.exports = Animal;

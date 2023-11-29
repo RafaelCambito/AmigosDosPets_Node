@@ -85,8 +85,9 @@ CREATE TABLE `sessions` (
 /*Data for the table `sessions` */
 
 insert  into `sessions`(`session_id`,`expires`,`data`) values 
-('7TBfrXadUYh1TSx8C_CyFDFvK6e6Ew89',1701377857,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8}'),
-('UXrQePFNFwOiv4a6vXxBlXqY5Pn61DJU',1701316862,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8}');
+('-gBjV7xus2X728KeUTaLINr3Q59IZrI_',1699309287,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"}}'),
+('PWrW26sWFLV28Rt3GneIQGl2uI9afCCb',1699309287,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"}}'),
+('W-FF45QJzIa1yl-evf5xck91TgO1u5Yb',1699323270,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8,\"successMessage\":\"Cadastro do pet encontrado realizado com sucesso!\"}');
 
 /*Table structure for table `users` */
 

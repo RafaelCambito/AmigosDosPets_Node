@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user'); // Importe o modelo User que representa a tabela de usuários
+const User = require('../models/User'); // Importe o modelo User que representa a tabela de usuários
 
 // Rota GET para a página de login
 router.get('/login', (req, res) => {

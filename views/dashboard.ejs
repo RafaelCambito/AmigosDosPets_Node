@@ -34,13 +34,13 @@
         <section class="pet-list">
             <h2>Seus Animais de Estimação</h2>
             <ul>
-                <% pets.forEach(pet => { %>
+                <% pets.forEach((pet, index) => { %>
                     <li>
                         <div class="pet-card">
                             <img src="/<%= pet.foto_pet %>" alt="Imagem do Animal">
                             <h3><%= pet.nome_pet %></h3>
                             <p>Espécie: <%= pet.especie_pet %></p>
-                            <!-- Adicionar outras informações do animal de estimação conforme necessário -->
+                            <button onclick="openQRCodePage('<%= pet.nome_pet %>', '<%= user.nome %>', '<%= user.email %>', '<%= user.whatsapp %>')">QRCode</button>
                         </div>
                     </li>
                 <% }); %>
@@ -52,14 +52,23 @@
         <p>&copy; 2023 Amigos dos Pets. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- JavaScript para ocultar a mensagem de sucesso após alguns segundos -->
     <script>
-        // JavaScript para ocultar a mensagem de sucesso após alguns segundos
         setTimeout(function () {
             var successMessage = document.getElementById('success-message');
             if (successMessage) {
                 successMessage.style.display = 'none';
             }
         }, 5000); // A mensagem de sucesso será ocultada após 5 segundos (ajuste conforme necessário)
+    </script>
+
+    <script>
+        function openQRCodePage(nomePet, nomeTutor, emailTutor, telefoneTutor) {
+            const qrCodeText = `Nome: ${nomePet}, Tutor: ${nomeTutor}, E-mail: ${emailTutor}, Telefone: ${telefoneTutor}`;
+            const qrCodeData = encodeURIComponent(qrCodeText);
+            const qrCodeUrl = `/qrcode?data=${qrCodeData}`;
+            window.open(qrCodeUrl, '_blank');
+        }
     </script>
 </body>
 </html>
