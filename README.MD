@@ -15,6 +15,8 @@ npm install multer
 npm install qrcode  
 
 
+
+
 ###Rodar o projeto com nodemon   
 nodemon app.js  
 
