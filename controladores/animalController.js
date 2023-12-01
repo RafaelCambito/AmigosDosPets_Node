@@ -40,6 +40,38 @@ async function searchAnimals(filters) {
     }
 }
 
+// Função para realizar a pesquisa de animais perdidos com base nos filtros
+async function searchLostPets(filters) {
+    try {
+        // Implemente a lógica para a busca de animais perdidos com base nos filtros necessários
+        // Certifique-se de ajustar o código conforme necessário
+
+        console.log('Filtros para animais perdidos:', filters);
+
+        // Exemplo de consulta para animais perdidos (ajuste conforme necessário)
+        const resultadosPerdidos = await Animal.findAll({
+            where: {
+                perdido: 'S', // Assumindo que há um campo "perdido" no seu modelo de Animal
+            },
+            include: {
+                model: User,
+                attributes: ['nome', 'email', 'whatsapp'],
+                where: {
+                    // Adicione quaisquer condições adicionais para filtrar usuários, se necessário
+                },
+            },
+        });
+
+        console.log('Resultados da consulta para animais perdidos:', resultadosPerdidos);
+
+        return resultadosPerdidos;
+    } catch (error) {
+        console.error('Erro ao pesquisar animais perdidos:', error);
+        throw error;
+    }
+}
+
 module.exports = {
     searchAnimals,
+    searchLostPets,
 };

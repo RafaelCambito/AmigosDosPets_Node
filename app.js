@@ -31,6 +31,8 @@ app.set('views', path.join(__dirname, 'views'));
 // static redirecionado para a pasta public
 app.use(express.static(__dirname + '/public'));
 
+
+
 // Configurar o body-parser para analisar dados do formulário
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -121,6 +123,10 @@ app.use('/', animalRoutes); // Rotas da página de adoção
 // importa rota petperdido
 const rotasPetPerdido = require('./rotas/petperdido'); // Importar o arquivo de rotas
 app.use('/', rotasPetPerdido); // Usar as rotas
+
+// Importe a rota de pets perdidos
+const perdidosRoute = require('./rotas/perdidos');
+app.use('/', perdidosRoute);
 
 // importa rota petencontrado
 const rotasPetencontrado = require('./rotas/petencontrado'); // Importar o arquivo de rotas

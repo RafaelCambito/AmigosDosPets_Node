@@ -31,22 +31,24 @@
             <!-- Adicionar outras informações de contato conforme necessário -->
         </section>
 
-        <section class="pet-list">
-            <h2>Seus Animais de Estimação</h2>
-            <ul>
-                <% pets.forEach((pet, index) => { %>
-                    <li>
-                        <div class="pet-card">
-                            <img src="/<%= pet.foto_pet %>" alt="Imagem do Animal">
-                            <h3><%= pet.nome_pet %></h3>
-                            <p>Espécie: <%= pet.especie_pet %></p>
-                            <button onclick="openQRCodePage('<%= pet.nome_pet %>', '<%= user.nome %>', '<%= user.email %>', '<%= user.whatsapp %>')">QRCode</button>
-                        </div>
-                    </li>
-                <% }); %>
-            </ul>
-        </section>
-    </main>
+        <a href="/cadastropet" class="button">Cadastrar Meu Pet</a>
+    </section>
+
+    <section class="pet-list">
+        <h2>Seus Animais de Estimação</h2>
+        <ul>
+            <% pets.forEach((pet, index) => { %>
+                <li>
+                    <div class="pet-card">
+                        <img src="/<%= pet.foto_pet %>" alt="Imagem do Animal">
+                        <h3><%= pet.nome_pet %></h3>
+                        <p>Espécie: <%= pet.especie_pet %></p>
+                        <button onclick="openQRCodePage('<%= pet.nome_pet %>', '<%= user.nome %>', '<%= user.email %>', '<%= user.whatsapp %>')">QRCode</button>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    </section>
 
     <footer class="dashboard-footer">
         <p>&copy; 2023 Amigos dos Pets. Todos os direitos reservados.</p>

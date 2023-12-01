@@ -41,6 +41,7 @@ input[type="password"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
 button[type="submit"] {
@@ -55,4 +56,36 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header img {
+    max-width: 100px; /* Ajuste conforme necessário */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+header img {
+    max-width: 100px; /* Ajuste conforme necessário */
+    border-radius: 50%; /* Isso arredondará a imagem criando um círculo */
 }

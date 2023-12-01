@@ -74,15 +74,50 @@ body {
     overflow: hidden;
 }
 
+.pet-card {
+    position: relative;
+    height: 300px; /* Defina a altura desejada para os cards */
+}
+
 .pet-card img {
     width: 100%; /* Define a largura da imagem como 100% do contêiner */
-    height: auto; /* Mantém a proporção original da imagem */
-    max-width: 230px; /* Define uma largura máxima para as imagens */
-    max-height: 230px; /* Define uma altura máxima para as imagens */
+    height: 60%; /* Define a altura da imagem como 100% do contêiner */
+    object-fit: cover; /* Mantém a proporção da imagem e a corta para caber no contêiner */
+    border-radius: 5px 5px 0 0; /* Arredonda apenas a parte superior da imagem */
 }
 
 .pet-card h3 {
-    margin: 5px 0;
+    margin: 10px 0;
+}
+
+.pet-card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pet-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo do botão "Cadastrar Meu Pet" */
+.account-details a.button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.account-details a.button:hover {
+    background-color: #0056b3;
 }
 
 /* Estilo do rodapé */

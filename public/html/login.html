@@ -7,8 +7,17 @@
     <title>Login</title>
 </head>
 <body>
+    <header>
+        <!-- Espaço para o logo -->
+        <img src="/image/Logo.png" alt="">
+    </header>
+
     <div class="login-container">
         <h1>Login</h1>
+
+        <!-- Mensagem e botão de cadastro -->
+        <p>Ainda não é cadastrado? <a href="/cadastrausuario">Clique aqui</a> para cadastrar!</p>
+
         <form id="loginForm" method="post" action="/login">
             <label for="cpf">CPF:</label>
             <input type="text" id="cpf" name="cpf" required><br>
@@ -19,5 +28,9 @@
             <button type="submit">Entrar</button>
         </form>
     </div>
+
+    <footer>
+        2023 Amigos dos Pets. Todos os direitos reservados.
+    </footer>
 </body>
 </html>

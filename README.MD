@@ -17,7 +17,7 @@ npm install qrcode
 
 
 
-###Rodar o projeto com nodemon   
+### Rodar o projeto com nodemon   
 nodemon app.js  
 
 ### Acessar no navegador  
@@ -32,5 +32,3 @@ Dashboard usuário = http://localhost:8080/dashboard
 Consulta pets adoção = http://localhost:8080/adotar  
 
 ### Em desenvolvimento / Projeto não finalizado.
-
-
