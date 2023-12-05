@@ -6,12 +6,22 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Estilo do cabeçalho */
 header {
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
+    position: relative; /* Adicionado para posicionar o link de Página Inicial */
+}
+
+/* Estilo do link Página Inicial */
+header a {
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    top: 50%; /* Ajusta verticalmente ao centro do cabeçalho */
+    right: 20px; /* Ajusta horizontalmente ao lado direito */
+    transform: translateY(-50%); /* Centraliza verticalmente */
 }
 
 /* Estilo do conteúdo principal */
@@ -31,6 +41,18 @@ section {
 
 section h2 {
     color: #333;
+}
+
+#imagem {
+    text-align: center;
+    margin-top: 20px; /* Ajuste conforme necessário para dar espaço entre a seção desenvolvedores e a imagem */
+}
+
+#imagem img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Isso centralizará a imagem horizontalmente */
 }
 
 /* Estilo do rodapé */

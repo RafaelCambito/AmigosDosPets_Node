@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../models/db');
+const User = require('./User');
 
 const Petencontrado = db.define('Petencontrado', {
     id_pet: {
@@ -40,5 +41,7 @@ const Petencontrado = db.define('Petencontrado', {
     tableName: 'petencontrado', // Especifica o nome da tabela
     timestamps: false // Desativa a inclusão automática de createdAt e updatedAt
 });
+
+Petencontrado.belongsTo(User, { foreignKey: 'user_id' });
 
 module.exports = Petencontrado;
