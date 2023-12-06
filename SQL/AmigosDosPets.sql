@@ -91,6 +91,7 @@ CREATE TABLE `sessions` (
 /*Data for the table `sessions` */
 
 insert  into `sessions`(`session_id`,`expires`,`data`,`cpf`) values 
+('DdqvD3CTqYaTpr0mzwF6b9pTe1be-mjG',1701916495,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8}',NULL),
 ('e5Ieuj9ylwZqDBQRsMXZo8CyYc8jyATC',1701830227,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8,\"successMessage\":\"Cadastro do pet encontrado realizado com sucesso!\"}',NULL),
 ('j8UVPllnRkz8x1Q01d6AuoUQ9NmX05Vp',1701904185,'{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"user_id\":8}',NULL);
 
@@ -120,7 +121,7 @@ CREATE TABLE `users` (
 
 insert  into `users`(`id`,`nome`,`cpf`,`email`,`whatsapp`,`telefone_secundario`,`endereco`,`estado`,`cidade`,`senha`,`genero`,`createdAt`,`updatedAt`,`sessao_ativa`) values 
 (1,'Usuário Master','66254544008','usermaster@mail.com.br','45999991010','4532232030','Rua Paraná, 1090','PR','Cascavel','123','masculino','2023-09-17 20:10:18','2023-09-17 20:10:18','N'),
-(8,'Usuário Teste','13129884955','userteste@mail.com.br','45999991010','4532232030','Avenida das Pombas, 2530','PR','Cascavel','1111','masculino','2023-09-21 12:03:55','2023-09-21 12:03:55','N');
+(8,'Rafael','13129884955','rafael@email.com.br','45999991010','4532232030','Avenida das Pombas, 2530','PR','Cascavel','1111','masculino','2023-09-21 12:03:55','2023-09-21 12:03:55','N');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

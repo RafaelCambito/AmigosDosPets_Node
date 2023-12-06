@@ -9,7 +9,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 4px;
     text-align: center;
     position: relative; /* Adicionado para posicionar o link de Página Inicial */
 }
@@ -20,39 +20,43 @@ header a {
     text-decoration: none;
     position: absolute;
     top: 50%; /* Ajusta verticalmente ao centro do cabeçalho */
-    right: 20px; /* Ajusta horizontalmente ao lado direito */
+    right: 30px; /* Ajusta horizontalmente ao lado direito */
     transform: translateY(-50%); /* Centraliza verticalmente */
 }
 
 /* Estilo do conteúdo principal */
 main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
+    max-width: 900px;
+    margin: 4px auto;
+    padding: 2px;
     background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.904);
+    text-align: justify;
 }
 
 /* Estilo das seções */
 section {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    text-align: justify;
+    margin-left: 20px; /* Adiciona margem à esquerda */
+    margin-right: 20px;
 }
 
 section h2 {
-    color: #333;
+    color: #030000;
 }
 
 #imagem {
     text-align: center;
-    margin-top: 20px; /* Ajuste conforme necessário para dar espaço entre a seção desenvolvedores e a imagem */
+    margin-top: 10px; /* Ajustado para um espaçamento maior entre a seção anterior e a imagem */
 }
 
 #imagem img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto; /* Isso centralizará a imagem horizontalmente */
+    margin: 10px auto; /* Ajuste conforme necessário para centralizar a imagem e dar espaço ao redor */
 }
 
 /* Estilo do rodapé */
@@ -61,7 +65,6 @@ footer {
     color: #fff;
     padding: 10px 0;
     text-align: center;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
